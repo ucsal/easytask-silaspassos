@@ -60,8 +60,10 @@ public class TaskApp {
 	private static void removeTask() {
 		System.out.print("Nome da Tarefa a remover: ");
 		String name = scanner.nextLine();
-		taskManager.removeTask(name);
-		System.out.println("Tarefa removida.");
+		if (taskManager.removeTask(name))
+			System.out.println("Tarefa removida.");
+		else
+			System.out.printf("Não há tarefa com o nome de \"%s\"\n", name);
 	}
 
 	private static void listTasks() {

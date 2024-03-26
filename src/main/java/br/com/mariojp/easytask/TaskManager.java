@@ -23,8 +23,8 @@ public class TaskManager {
 		}
 	}
 
-	public void removeTask(String taskName) {
-		tasks.removeIf(task -> task.getName().equals(taskName));
+	public boolean removeTask(String taskName) {
+		return tasks.removeIf(task -> task.getName().equals(taskName));
 	}
 
 	public List<Task> getTasks() {
